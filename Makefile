@@ -2,9 +2,12 @@ NAME		=		minishell
 
 CC 			= 		cc
 
-CFLAGS 		= 		-Wall -Werror -Wextra -Iincludes
+CFLAGS 		= 		-Wall -Werror -Wextra -Iincludes 
 
-SRCS 		=		main.c
+SRCS 		=		main.c \
+					./parsing/handle_flags.c \
+					./parsing/ms_split.c \
+					./parsing/syntax_check.c \
 
 SRCS_DIR 	= 		./srcs/
 
@@ -16,7 +19,7 @@ LIBFT 		= 		./libft/libft.a
 
 $(NAME) 	: 		$(OBJS)
 					make all -C $(LIBFT_DIR)
-					$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+					$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -lreadline -o $(NAME)
 
 all 		: 		$(NAME)
 
