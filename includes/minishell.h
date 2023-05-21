@@ -7,6 +7,7 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include "libft.h"
+# include "structure.h"
 
 typedef struct	s_flag
 {
